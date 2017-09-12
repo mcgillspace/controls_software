@@ -1,5 +1,5 @@
 % John KM Jung
-cd 'C:\Users\Lee\Documents\MATLAB\CSDC' % Change Directory
+cd 'C:\Users\Lee\Documents\MATLAB\CSDC\Simulations' % Change Directory
 
 clc
 close all
@@ -10,13 +10,14 @@ format long
 constants % All constants in one file.
 
 % Initial Conditions
-
-IC = [-0.5037, -0.3394, -0.0793, 1.0, 0.35, -0.17, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].';
-            %quaternion           n          omega           Torque       wheel_w
+%    [       quaternion       ] [  n  ] [     omega     ] [   Torque   ]  [   wheel_w  ] 
+IC = [-0.0030, -0.9010, 0.30000, -0.312, 0.01, 0.01, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].';
+% IC = [-0.5037, -0.3394, -0.0793, 1.0, 0.35, -0.17, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].';
+            
 % Simulation time.
 t0 = 0; % s
 t_max = 25000; % s
-t_div = 250001;
+t_div = 25001;
 t_span = linspace(t0,t_max,t_div); % Total simulatoin time.
 % t_span = [0 t_max];
 
@@ -39,7 +40,7 @@ time_stamp = toc; % The tic above and the toc here will time how long the simula
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Post Processing
-% post_processing
+post_processing
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Plot data

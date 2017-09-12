@@ -3,7 +3,7 @@
 
 % Satellite
 mass = 1.5; % kg, mass.
-sat_I = [6.7e-3 0 0; 0 3.33e-3 0; 0 0 3.33e-2]; % kg*m^2, of 3U.
+sat_I = [8.96e-3 0 0; 0 8.65e-3 0; 0 0 1.78e-2]; % kg*m^2, of 3U.
 wheel_I = [0.733e-4 0 0; 0 0.733e-4 0; 0 0 1.466e-4]; % kg*m^2, of a reaction wheel.
 I = eye(3);
 

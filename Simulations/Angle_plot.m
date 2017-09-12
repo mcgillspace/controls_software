@@ -8,7 +8,7 @@ for i = 1:length(x_out)
     C_e = [x_out(i,1); x_out(i,2); x_out(i,3)];         %Get values for epsilon
     C_n = x_out(i,4);                                   %Get values for eta
     C_e_T = transpose(C_e);                             %Calculate epsilon transpose
-    ex_c = CrossProductFactor(C_e);                               %Calculate epsilon cross
+    ex_c = CrossProductOperator(C_e);                               %Calculate epsilon cross
     C = (2*C_n^2-1)*eye(3) + 2*C_e*C_e_T - 2*C_n*ex_c; %Calculate rotation matrix
     if C(2,3)>0
         if C(3,3)>0
