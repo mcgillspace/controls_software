@@ -1,5 +1,4 @@
 % John KM Jung
-cd 'C:\Users\Lee\Documents\MATLAB\CSDC\Simulations' % Change Directory
 
 clc
 close all
@@ -11,8 +10,8 @@ constants % All constants in one file.
 
 % Initial Conditions
 %    [       quaternion       ] [  n  ] [     omega     ] [   Torque   ]  [   wheel_w  ] 
-IC = [-0.0030, -0.9010, 0.30000, -0.312, 0.01, 0.01, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].';
-% IC = [-0.5037, -0.3394, -0.0793, 1.0, 0.35, -0.17, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].';
+% IC = [-0.0030, -0.9010, 0.30000, -0.312, 0.01, 0.01, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].';
+IC = [-0.5037, -0.3394, -0.0793, 1.0, 0.35, -0.17, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0].';
             
 % Simulation time.
 t0 = 0; % s
