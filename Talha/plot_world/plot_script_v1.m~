@@ -1,0 +1,36 @@
+% James Richard Forbes
+% November 4, 2012
+% Plot Earth and orbit of SC. 
+% i = pi/4, Omega = omega = t0 = e = 0, alt = 400km.
+% One orbit. 
+
+close all
+font_size = 15;
+line_size = 15;
+line_width = 1.5;
+
+% Load the position data, which we will plot.
+load sim_data_students.mat
+
+figure
+plot3(rout(:,1),rout(:,2),rout(:,3),'r','Linewidth',line_width); % Plot the SC position data. 
+hold on
+grid on
+% Create map o
+[F_i1, F_i2, F_i3] = sphere(36);
+colormap(white)
+surf(F_i1*Re, F_i2*Re, F_i3*Re)
+load coast.mat
+[x_coast, y_coast, z_coast] = sph2cart(long*(pi/180), lat*(pi/180), Re);
+plot3(x_coast, y_coast, z_coast, 'k')
+axis('equal')
+title('Spacecraft Orbit','fontsize',font_size);
+xlabel('g_1 (km)','fontsize',font_size);
+ylabel('g_2 (km)','fontsize',font_size);
+zlabel('g_3 (km)','fontsize',font_size);
+view([1 1 1])
+set(gca,'XMinorGrid','off','GridLineStyle','-','FontSize',line_size)
+grid on
+% print -depsc -r720 plots/orbit
+exportfig(gcf,'plots/orbit','width',8.5,'Height',11,'fontmode','fixed','fontsize',18,'Color','cmyk');
+
